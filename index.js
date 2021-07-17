@@ -7,7 +7,9 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+let count = 0;
 io.on('connection', (socket) => {
+  console.log(`socket ${socket.id} was connected!, count ${count++}`)
   socket.on('chat message', msg => {
     io.emit('chat message', msg);
   });

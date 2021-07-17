@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "my first socket.io app",
   "dependencies": {
+    "artillery": "^1.7.6",
+    "artillery-engine-socketio-v3": "^1.0.1",
     "express": "^4.17.1",
     "socket.io": "^4.1.2"
   },
