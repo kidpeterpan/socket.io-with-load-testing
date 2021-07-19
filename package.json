@@ -9,6 +9,7 @@
     "socket.io": "^4.1.2"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "load": "npx artillery run my-scenario.yml" 
   }
 }

@@ -1,7 +1,7 @@
 # my-scenario.yml
 config:
   target: "http://localhost:3000 own protocol, "
-  phases
+  phases:
     - duration: 60
       arrivalRate: 10
   engines:

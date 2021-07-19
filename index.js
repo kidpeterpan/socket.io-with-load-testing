@@ -15,6 +15,10 @@ io.on('connection', (socket) => {
   });
 });
 
+io.on('disconenction', (socket) => {
+  console.log(`socket ${socket.id} was disconnected!, count ${count++}`)
+});
+
 http.listen(port, () => {
   console.log(`Socket.IO server running at http://localhost:${port}/`);
 });
