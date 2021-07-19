@@ -8,15 +8,16 @@ app.get('/', (req, res) => {
 });
 
 let count = 0;
+let count_disconenct = 0;
 io.on('connection', (socket) => {
   console.log(`socket ${socket.id} was connected!, count ${count++}`)
+  socket.on('disconnect', ()=>{
+     console.log(`socket ${socket.id} was disconnected!, count ${count_disconenct++} !!!`)
+  });	
+
   socket.on('chat message', msg => {
     io.emit('chat message', msg);
   });
-});
-
-io.on('disconenction', (socket) => {
-  console.log(`socket ${socket.id} was disconnected!, count ${count++}`)
 });
 
 http.listen(port, () => {

@@ -10,6 +10,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "load": "npx artillery run my-scenario.yml" 
+    "load": "npx artillery run my-scenario.yml"
   }
 }

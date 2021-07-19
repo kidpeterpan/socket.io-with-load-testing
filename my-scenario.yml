@@ -1,11 +1,11 @@
 # my-scenario.yml
 config:
-  target: "http://localhost:3000 own protocol, "
+  target: "http://localhost:3000"
   phases:
-    - duration: 60
-      arrivalRate: 10
+    - duration: 100
+      arrivalRate: 50
   engines:
-    socketio-v3: {}
+   socketio-v3: {}
 
 scenarios:
   - name: My sample scenario
@@ -19,28 +19,5 @@ scenarios:
           channel: "hello"
           data: "world"
 
-      # emit an object
-      - emit:
-          channel: "hello"
-          data:
-            id: 42
-            status: "in progress"
-            tags:
-              - "tag1"
-              - "tag2"
-
-      # emit in a custom namespace
-      - namespace: "/my-namespace"
-        emit:
-          channel: "hello"
-          data: "world"
-
-      # emit with acknowledgement
-      - emit:
-          channel: "ping"
-        acknowledge:
-          match:
-            value: "pong"
-
-      # do nothing for 30 seconds then disconnect
-      - think: 30
+     # do nothing for 30 seconds then disconnect
+      - think: 300
